@@ -1,0 +1,19 @@
+---
+import Button from '../components/Button.astro';
+import Nothing from '@components/nothing.tsx';
+---
+
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+        <title>Astro + TailwindCSS</title>
+    </head>
+
+    <body>
+        <div class='grid h-screen place-items-center content-center'>
+            <Button>Tailwind Button in Astro!</Button>
+            <Nothing />
+        </div>
+    </body>
+</html>
