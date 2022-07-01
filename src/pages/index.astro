@@ -1,19 +1,26 @@
 ---
-import Button from '../components/Button.astro';
-import Nothing from '@components/nothing.tsx';
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const title = 'David Huson | Software Engineer'
+const description =
+  'This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.'
+const permalink = 'https://example.com/'
 ---
 
-<html lang='en'>
-    <head>
-        <meta charset='UTF-8' />
-        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-        <title>Astro + TailwindCSS</title>
-    </head>
-
-    <body>
-        <div class='grid h-screen place-items-center content-center'>
-            <Button>Tailwind Button in Astro!</Button>
-            <Nothing />
-        </div>
-    </body>
-</html>
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  canonicalURL={Astro.canonicalURL.href}
+>
+  <div class='dark: bg-slate-700 text-fuchsia-400'>
+    <h1 class='text-5xl'>Todo</h1>
+    <div>Header</div>
+    <div>Navigation</div>
+    <div>Hero</div>
+    <div>About</div>
+    <div>Projects</div>
+    <div>Posts</div>
+    <div>Footer</div>
+  </div>
+</BaseLayout>
