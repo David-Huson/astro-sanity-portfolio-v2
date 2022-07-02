@@ -1,4 +1,5 @@
 ---
+import Navigation from '../components/Navigation.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 const title = 'David Huson | Software Engineer'
@@ -14,13 +15,12 @@ const permalink = 'https://example.com/'
   canonicalURL={Astro.canonicalURL.href}
 >
   <div class='dark: bg-slate-700 text-fuchsia-400'>
+    <Navigation />
     <h1 class='text-5xl'>Todo</h1>
-    <div>Header</div>
-    <div>Navigation</div>
-    <div>Hero</div>
+    <!-- <div>Hero</div>
     <div>About</div>
     <div>Projects</div>
     <div>Posts</div>
-    <div>Footer</div>
+    <div>Footer</div> -->
   </div>
 </BaseLayout>

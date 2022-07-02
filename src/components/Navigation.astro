@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from 'react'
-const Header = () => {
-  const [colorChange, setColorchange] = useState(false);
+---
+const nav = [
+  { link: '/blog', name: 'Blog' },
+  { link: '/projects', name: 'Projects' },
+  { link: 'https://github.com/David-Huson/', name: 'Github', target: '_blank' },
+]
+---
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  function handleScroll() {
-    if (window.pageYOffset > 50) {
-      return setColorchange(true);
-    } 
-    return setColorchange(false);
-  }
-
-  return (
-    <header id="header" className={colorChange ? 'active' : ''}>
-        <ul>
-          {nav.map((item, i) => (
-            <li key={i}>
-                <a href={item.link} target={item.target} rel="noopener noreferrer">{item.name}</a>
-            </li>
-          ))}
-        </ul>
-    </header>
-  )
-}
-export default Header;
+<nav class='flex items-center justify-between flex-wrap bg-gray-800 p-6'>
+  <div class='flex items-center flex-shrink-0 text-white mr-6'>
+    <svg
+      class='fill-current h-8 w-8 mr-2'
+      width='54'
+      height='54'
+      viewBox='0 0 54 54'
+      xmlns='http://www.w3.org/2000/svg'
+      ><path
+        d='M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z'
+      ></path>
+    </svg>
+    <span class='font-semibold text-xl tracking-tight'>David Huson</span>
+  </div>
+  <ul class='flex space-x-4'>
+    {nav.map((item) => (
+      <li>
+        <a
+          href={item.link}
+          target={item.target}
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
