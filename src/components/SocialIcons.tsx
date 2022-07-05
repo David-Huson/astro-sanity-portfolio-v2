@@ -4,7 +4,7 @@ export default function SocialIcons() {
   return (
     <div className="flex flex-row items-center space-x-4">
       <a
-        href={site.instagramURL}
+        href={site.instagram.link}
         className="text-base font-normal text-gray-600 dark:text-gray-300"
       >
         <svg
@@ -19,7 +19,7 @@ export default function SocialIcons() {
         </svg>
       </a>
       <a
-        href={site.twitterURL}
+        href={site.twitter.link}
         className="text-base font-normal text-gray-600 dark:text-gray-300"
       >
         <svg
@@ -34,7 +34,7 @@ export default function SocialIcons() {
         </svg>
       </a>
       <a
-        href={site.linkedInURL}
+        href={site.linkedIn.link}
         className="text-base font-normal text-gray-600 dark:text-gray-300"
       >
         <svg

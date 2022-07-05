@@ -28,9 +28,9 @@ function ArticleSchema({
       url: 'https://example.com/about/',
       sameAs: [
         `${site.url}`,
-        `${site.facebookURL}`,
-        `${site.twitterURL}`,
-        `${site.instagramURL}`,
+        `${site.facebook.link}`,
+        `${site.twitter.link}`,
+        `${site.instagram.link}`,
       ],
     },
     headline: `${title}`,
