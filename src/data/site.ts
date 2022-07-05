@@ -5,12 +5,30 @@ export const site = {
   // JSON LD
   name: `David Huson`,
   // Twitter URL
-  twitterURL: `https://twitter.com/David_Huson_`,
-  linkedInURL: `https://www.linkedin.com/in/david-huson-`,
-  // Facebook URL
-  facebookURL: `https://facebook.com`,
-  // Instagram URL
-  instagramURL: `https://instagram.com`,
+  twitter: {
+    name: `Twitter`,
+    link: `https://twitter.com/David_Huson_`,
+  },
+
+  github: {
+    name: `Github`,
+    link: `https://github.com/David-Huson/`,
+  },
+
+  facebook: {
+    name: `Facebook`,
+    link: `https://facebook.com`,
+  },
+
+  linkedIn: {
+    name: `LinkedIn`,
+    link: `https://www.linkedin.com/in/david-huson-`,
+  },
+
+  instagram: {
+    name: `Instagram`,
+    link: `https://instagram.com`,
+  },
 }
 
 export interface ArticleSchemaTypes {

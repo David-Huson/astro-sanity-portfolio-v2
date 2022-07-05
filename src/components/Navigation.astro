@@ -23,20 +23,18 @@ const nav = [
       </a>
     </div>
     <div class='space-x-8 hidden md:block'>
-      <ul class='flex space-x-4'>
+      <div class='flex space-x-4'>
         {nav.map((item) => (
-          <li>
-            <a
-              href={item.link}
-              target={item.target}
-              rel="noopener noreferrer"
-              class="text-base text-gray-600 dark:text-gray-300 font-normal"
-            >
-              {item.name}
-            </a>
-          </li>
+          <a
+            href={item.link}
+            target={item.target}
+            rel="noopener noreferrer"
+            class="text-base text-gray-600 dark:text-gray-300 font-normal"
+          >
+            {item.name}
+          </a>
         ))}
-      </ul>
+      </div>
     </div>
     <div class='space-x-4 flex flex-row items-center'>
       <!-- Social Icons -->

@@ -1,4 +1,5 @@
 ---
+import About from '../components/About.astro'
 import Hero from '../components/Hero.astro'
 import Navigation from '../components/Navigation.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
@@ -16,12 +17,14 @@ const permalink = 'https://example.com/'
   canonicalURL={Astro.canonicalURL.href}
 >
   <div class='bg-white dark:bg-slate-700 text-black dark:text-white'>
-    <Navigation client:load />
-    <Hero />
-    <h1 class='text-5xl'>Todo</h1>
-    <div>About</div>
-    <div>Projects</div>
-    <div>Posts</div>
-    <div>Footer</div>
+    <div class='container mx-auto'>
+      <Navigation client:load />
+      <Hero />
+      <About />
+      <h1 class='text-5xl'>Todo</h1>
+      <div>Projects</div>
+      <div>Posts</div>
+      <div>Footer</div>
+    </div>
   </div>
 </BaseLayout>
