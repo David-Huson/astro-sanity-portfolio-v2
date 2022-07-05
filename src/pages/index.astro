@@ -14,13 +14,13 @@ const permalink = 'https://example.com/'
   permalink={permalink}
   canonicalURL={Astro.canonicalURL.href}
 >
-  <div class='dark: bg-slate-700 text-fuchsia-400'>
-    <Navigation />
+  <div class='bg-white dark:bg-slate-700 text-black dark:text-white'>
+    <Navigation client:load />
     <h1 class='text-5xl'>Todo</h1>
-    <!-- <div>Hero</div>
+    <div>Hero</div>
     <div>About</div>
     <div>Projects</div>
     <div>Posts</div>
-    <div>Footer</div> -->
+    <div>Footer</div>
   </div>
 </BaseLayout>

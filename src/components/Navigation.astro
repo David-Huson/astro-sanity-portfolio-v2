@@ -1,4 +1,6 @@
 ---
+import { site } from '../data/site.ts'
+
 const nav = [
   { link: '/blog', name: 'Blog' },
   { link: '/projects', name: 'Projects' },
@@ -6,32 +8,86 @@ const nav = [
 ]
 ---
 
-<nav class='flex items-center justify-between flex-wrap bg-gray-800 p-6'>
-  <div class='flex items-center flex-shrink-0 text-white mr-6'>
-    <svg
-      class='fill-current h-8 w-8 mr-2'
-      width='54'
-      height='54'
-      viewBox='0 0 54 54'
-      xmlns='http://www.w3.org/2000/svg'
-      ><path
-        d='M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z'
-      ></path>
-    </svg>
-    <span class='font-semibold text-xl tracking-tight'>David Huson</span>
+<div class='max-w-6xl  mx-auto px-4 py-10 md:py-20'>
+  <div class='flex  md:flex-row justify-between items-center'>
+    <div class='flex flex-col'>
+      <a href='/'>
+        <h1 class='font-semibold text-xl dark:text-gray-100'>
+          {site.name}
+        </h1>
+        <p class='text-base font-light text-gray-500 dark:text-gray-300'>
+          ASPIRING SOFTWARE ENGINEER
+        </p>
+      </a>
+    </div>
+    <div class='space-x-8 hidden md:block'>
+      <ul class='flex space-x-4'>
+        {nav.map((item) => (
+          <li>
+            <a
+              href={item.link}
+              target={item.target}
+              rel="noopener noreferrer"
+              class="text-base text-gray-600 dark:text-gray-300 font-normal"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
-  <ul class='flex space-x-4'>
-    {nav.map((item) => (
-      <li>
-        <a
-          href={item.link}
-          target={item.target}
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+
+  <div class='space-x-8 block md:hidden mt-4'>
+    <ul>
+      {nav.map((item) => (
+        <li>
+          <a
+            href={item.link}
+            target={item.target}
+            rel="noopener noreferrer"
+            class="text-base font-normal text-gray-600 dark:text-gray-300"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div class='space-x-4 flex flex-row items-center'>
+    <!-- dark mode toggle -->
+    <div>
+      <input type='checkbox' name='' id='checkbox' class='hidden' />
+      <label for='checkbox' class='dark:block hidden text-yellow-500'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='currentColor'
+          stroke='currentColor'
+          className='w-4 h-4'
         >
-          {item.name}
-        </a>
-      </li>
-    ))}
-  </ul>
-</nav>
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width={2}
+            d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+          ></path>
+        </svg>
+      </label>
+      <label for='checkbox' class='block dark:hidden text-gray-400'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='currentColor'
+          stroke='currentColor'
+          className='w-4 h-4'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width={2}
+            d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
+          ></path>
+        </svg>
+      </label>
+    </div>
+  </div>
+</div>
