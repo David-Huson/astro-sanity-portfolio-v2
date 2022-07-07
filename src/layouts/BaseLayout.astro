@@ -1,5 +1,5 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
+// import BaseHead from '../components/BaseHead.astro'
 
 const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
   Astro.props
@@ -23,14 +23,14 @@ const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
       toggleDarkMode()
       checkbox.addEventListener('click', toggleDarkMode)
     </script>
-    <BaseHead
+    <!-- <BaseHead
       title={title}
       description={description}
       permalink={permalink}
       canonicalURL={canonicalURL}
       publishDate={publishDate}
       ogImageUrl={ogImageUrl}
-    />
+    /> -->
   </head>
   <body>
     <main>
