@@ -1,10 +1,8 @@
 ---
 // import { getSanityImageUrl } from '../utils/helpers.ts'
-import type { Props } from 'astro'
 import type { Project } from '../types/sanity-types'
 
-const { title, projectLink, description, tags }: Project = Astro.props
-  .project as Props
+const { title, projectLink, description, tags }: Project = Astro.props.project
 ---
 
 <div
