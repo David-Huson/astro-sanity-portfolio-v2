@@ -5,7 +5,7 @@ export default function SocialIcons() {
     <div className="flex flex-row items-center space-x-4">
       <a
         href={site.instagram.link}
-        className="text-base font-normal text-gray-600 dark:text-gray-300"
+        className="text-base font-normal text-slate-800 dark:text-slate-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ export default function SocialIcons() {
       </a>
       <a
         href={site.twitter.link}
-        className="text-base font-normal text-gray-600 dark:text-gray-300"
+        className="text-base font-normal text-slate-800 dark:text-slate-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export default function SocialIcons() {
       </a>
       <a
         href={site.linkedIn.link}
-        className="text-base font-normal text-gray-600 dark:text-gray-300"
+        className="text-base font-normal text-slate-800 dark:text-slate-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
