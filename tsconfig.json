@@ -37,7 +37,14 @@
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"],
 
-    "baseUrl": "."
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    "/src/**/*.d.ts",
+    "./node_modules/@types"
+  ]
 }
