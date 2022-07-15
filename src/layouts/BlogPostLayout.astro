@@ -1,2 +1,25 @@
 ---
+import BaseHead from '../components/sections/Header/BaseHead.astro'
+
+const { title, description, ogImageURL, publishDate, permalink } = Astro.props
 ---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      permalink={permalink}
+      ogImageUrl={ogImageURL}
+      publishDate={publishDate}
+      canonicalURL={Astro.canonicalURL.href}
+      articleSchema
+    />
+  </head>
+  <body>
+    <main>
+      <slot></slot>
+    </main>
+  </body>
+</html>

@@ -1,9 +1,30 @@
 ---
 import Wrapper from '../../../layouts/Wrapper.astro'
+import { Post } from '../../../types/sanity-types.d.ts'
+import {
+  getSanityImageUrl,
+  formatBlogPostDate,
+} from '../../../utils/helpers.ts'
+
+const { post }: Post = Astro.props
 ---
 
 <Wrapper>
-  <div class='p-6 grid grid-cols-3 gap-4'>
-    <slot></slot>
-  </div>
+  <Wrapper>
+    <article class='post-content__article'>
+      {post.mainImage && (
+        <img
+          width="720"
+          height="420"
+          class="post-main__img"
+          loading="lazy"
+          src={getSanityImageUrl(post.mainImage).url()}
+        />
+      )}
+      <h1>{post.title}</h1>
+      <time>{formatBlogPostDate(post.publishedAt)}</time>
+      {post.author && <p>By {post.author.name}</p>}
+      <!-- <SanityBlockContent blocks={post.body} /> -->
+    </article>
+  </Wrapper>
 </Wrapper>
