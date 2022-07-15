@@ -1,12 +1,12 @@
 ---
 import { client } from '../../lib/sanityClient.ts'
 import { AllPosts } from '../../lib/api.ts'
-import Wrapper from '../../components/Wrapper.astro'
+import Wrapper from '../../layouts/Wrapper.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import BlogSection from '../../components/BlogSection.astro'
+import BlogSection from '../../components/sections/blog/BlogSection.astro'
 import { Post } from '../../types/sanity-types.d.ts'
-import BlogPreview from '../../components/BlogPreview.astro'
-import Footer from '../../components/Footer.astro'
+import BlogPreview from '../../components/sections/blog/BlogPreview.astro'
+import Footer from '../../components/elements/Footer.astro'
 
 const title = 'David Huson | Blog'
 const description = 'My Blog'
