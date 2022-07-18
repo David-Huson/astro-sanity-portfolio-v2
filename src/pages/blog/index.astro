@@ -25,8 +25,8 @@ const allPostData = await client.fetch(AllPosts)
     <div>
       <BlogSection>
         {allPostData.map((post: Post) => <BlogPreview post={post} />)}
-        {allPostData.map((post: Post) => <BlogPreview post={post} />)}
-        {allPostData.map((post: Post) => <BlogPreview post={post} />)}
+        <!-- {allPostData.map((post: Post) => <BlogPreview post={post} />)}
+        {allPostData.map((post: Post) => <BlogPreview post={post} />)} -->
       </BlogSection>
     </div>
   </Wrapper>

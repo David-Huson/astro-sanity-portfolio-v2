@@ -1,6 +1,6 @@
 {
   // Configuration for JavaScript files
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "extends": ["plugin:prettier/recommended"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -36,6 +36,7 @@
       "files": ["**/*.ts", "**/*.tsx"],
       "plugins": [
         "@typescript-eslint",
+        "import",
         "react",
         "unused-imports",
         "tailwindcss",
@@ -57,17 +58,15 @@
             "endOfLine": "auto"
           }
         ],
-        "import/extensions": [
-          "error",
-          "ignorePackages",
-          {
-            "js": "never",
-            "jsx": "never",
-            "ts": "never",
-            "tsx": "never",
-            "": "never"
-          }
-        ], // Avoid missing file extension errors when using '@/' alias
+        "import/extensions": ["warn", "always"], // Avoid missing file extension errors when using '@/' alias
+        // "ignorePackages",
+        // {
+        //   "js": "never",
+        //   "jsx": "never",
+        //   "ts": "never",
+        //   "tsx": "never",
+        //   "": "never"
+        // }
         "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
         "react/require-default-props": "off", // Allow non-defined react props as undefined
         "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
@@ -86,7 +85,9 @@
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
           "error",
-          { "argsIgnorePattern": "^_" }
+          {
+            "argsIgnorePattern": "^_"
+          }
         ]
       }
     },
@@ -116,13 +117,12 @@
         // Enable recommended rules
         "astro/no-conflict-set-directives": "error",
         "astro/no-unused-define-vars-in-style": "error"
-
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
       }
     },
+    // Configuration for `<script>` tag.
     {
-      // Define the configuration for `<script>` tag.
       // Script in `<script>` is assigned a virtual file name with the `.js` extension.
       "files": ["**/*.astro/*.js", "*.astro/*.js"],
       "env": {
@@ -135,11 +135,9 @@
       "rules": {
         // override/add rules settings here, such as:
         // "no-unused-vars": "error"
-
         // If you are using "prettier/prettier" rule,
         // you don't need to format inside <script> as it will be formatted as a `.astro` file.
         "prettier/prettier": "off",
-
         "import/extensions": [
           "error",
           "ignorePackages",
@@ -152,12 +150,17 @@
           }
         ], // Avoid missing file extension errors in .astro files
         "import/no-unresolved": [
-          "error",
+          "warn",
           {
             "ignore": ["@/*"]
           }
         ], // Disable no-unresolved rule for .astro files
-        "react/jsx-filename-extension": [1, { "extensions": [".astro"] }], // Accept jsx in astro files
+        "react/jsx-filename-extension": [
+          1,
+          {
+            "extensions": [".astro"]
+          }
+        ], // Accept jsx in astro files
         "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
         "react/require-default-props": "off", // Allow non-defined react props as undefined
         "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
@@ -176,7 +179,9 @@
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
           "error",
-          { "argsIgnorePattern": "^_" }
+          {
+            "argsIgnorePattern": "^_"
+          }
         ]
       }
     }

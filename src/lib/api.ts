@@ -9,4 +9,4 @@ export const AllProjects = `*[_type == "project"] {
   }
 }`
 
-export const AllPosts = `*[_type == 'post'][0...3]{categories[]->{slug, title}, ...} | order(publishedAt desc)`
+export const AllPosts = `*[_type == 'post'][0...3] {...}`
